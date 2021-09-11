@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="./Styles/styles.css" />
+    <script type="text/javascript" src="./index.js"></script>
+    <title>Kossher Moments</title>
+  </head>
+  <body>
+    <div id="home" class="home">
+      <div class="container__item landing-page-container">
+        <div class="content__wrapper">
+          <header class="header">
+            <div class="menu-icon header__item">
+              <span class="menu-icon__line"></span>
+            </div>
+            <h1 class="heading header__item">Kossher Moments</h1>
+            <ul class="social-container header__item">
+              <li class="social__icon social__icon--os">
+                <a
+                  href="https://opensea.io/collection/kossher-moments"
+                  target="_blank"
+                  ><img src="./Assets/Images/opensea_logo.png" alt="opensea"
+                /></a>
+              </li>
+              <li class="social__icon social__icon--tw">
+                <a href="https://twitter.com/kossher_nft" target="_blank">
+                  <img src="./Assets/Images/twitter_logo.png" alt="twitter"
+                /></a>
+              </li>
+            </ul>
+          </header>
+          <p class="coords">N 49° 16' 35.173" / W 0° 42' 11.30"</p>
+          <div class="ellipses-container">
+            <div class="background-video">
+              <video loop muted autoplay id="bg-vid">
+                <source src="" type="video/mp4" />
+              </video>
+            </div>
+            <h2 class="greeting">Hello</h2>
+            <div class="ellipses ellipses__outer--thin">
+              <div class="ellipses ellipses__orbit"></div>
+            </div>
+            <div class="ellipses ellipses__outer--thick"></div>
+          </div>
+
+          <div class="scroller" onclick="smoothScroll()">
+            <p id="page-title" class="page-title">home</p>
+            <div class="timeline">
+              <span class="timeline__unit"></span>
+              <span class="timeline__unit timeline__unit--active"></span>
+              <span class="timeline__unit"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <section id="roadmap" class="roadmap">
+      <h2 class="heading">Roadmap:</h2>
+      <div class="goals">
+        <div class="goal" style="--rotation: -1; --date: 'January 2021'">
+          <div>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cupiditate
+            quae obcaecati tempora nobis eveniet voluptatum officiis,
+            consequatur accusamus enim natus qui maiores harum iure iste, earum,
+            rerum provident alias cumque! Lorem ipsum dolor sit amet,
+            consectetur adipisicing elit. Incidunt itaque aut cumque numquam
+            nemo architecto magni et? Labore magni quaerat quis, totam
+            perspiciatis, tenetur neque nihil, dolorem tempora non dolores!
+          </div>
+        </div>
+        <div class="goal" style="--rotation: 1; --date: 'February 2021'">
+          <div>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aliquid
+            unde temporibus quasi voluptates ab ex.
+          </div>
+        </div>
+        <div class="goal" style="--rotation: -1; --date: 'March 2021'">
+          <div>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Totam
+            rerum possimus qui sed consectetur voluptatem ducimus porro ex a!
+            Inventore fuga atque minima nobis ut iusto quibusdam incidunt
+            officia ab!
+          </div>
+        </div>
+        <div class="goal" style="--rotation: 1; --date: 'April 2021'">
+          <div>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus
+            pariatur quam, atque autem repellat voluptate praesentium! Numquam
+            aliquam molestias ipsum?
+          </div>
+        </div>
+        <div class="goal" style="--rotation: -1; --date: 'May 2021'">
+          <div>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsa,
+            explicabo itaque quae possimus mollitia distinctio!
+          </div>
+        </div>
+      </div>
+    </section>
+    <script>
+      videoBackgrounds();
+      //   imageBackgrounds();
+
+      const position = document.getElementById("page-title");
+      const timeline = document.getElementsByClassName("timeline")[0];
+
+      window.onscroll = () => {
+        if (
+          window.pageYOffset >=
+          document.getElementById("home").offsetHeight / 2
+        ) {
+          position.innerHTML = "roadmap";
+          position.style.color = "#09383e";
+          timeline.classList.remove("light");
+          timeline.classList.add("dark");
+        } else {
+          position.innerHTML = "home";
+          position.style.color = "white";
+          timeline.classList.remove("dark");
+          timeline.classList.add("light");
+        }
+      };
+    </script>
+  </body>
+</html>
